@@ -205,14 +205,9 @@ def similarity(feat1, feat2, feat3):
     w4       = w4.view(B, -1)  # [B, 1]
     w3       = 0.5 + 0.5 * w3  # [B, 1]
     w4       = 0.5 + 0.5 * w4  # [B, 1]
-    # w4       = 0.5 + 0.5 * w3  # [B, 1]
 
-    # weighted
-    # feat_out = feat1 + ((w1 * feat2  + w2 * feat3) / 2 + (w3 * feat2  + w4 * feat3) / 2) / 2  # [B, D]
-    
-    # feat_out = feat1 + (w1 + w3) * feat2  + (w2 + w4) * feat3  # [B, D]
-    # feat_out = feat1 + w1 * feat2  + w2 * feat3  # [B, D]  edu
-    feat_out = feat1 + w3 * feat2  + w4 * feat3  # [B, D]  cos
+    # weighted 
+    feat_out = feat1 + (w1 + w3) * feat2  + (w2 + w4) * feat3  # [B, D]
     feat_out = feat_out.view(B, 1, D)  # [B, 1, D]
 
     return feat_out
