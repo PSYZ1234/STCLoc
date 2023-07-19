@@ -16,7 +16,7 @@ We support the Oxford Radar RobotCar and vReLoc datasets right now.
 ## Run
 ### Oxford
 
-- train -- 2 GPUS
+- train -- 2 GPUs
 ```
 python train.py --gpu_id 0 --batch_size 80 --val_batch_size 80 --decay_step 500 --log_dir log-oxford/ --dataset Oxford --num_loc 10 --num_ang 10 --skip 2
 ```
