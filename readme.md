@@ -39,7 +39,7 @@ python eval.py --gpu_id 0 --val_batch_size 40 --log_dir log-vreloc/ --dataset vR
 
 ## Acknowledgement
 
- We appreciate the code of PointNet++, SOE-Net, MinkLoc3D, and AtLoc they shared.
+ We appreciate the code of PointNet++ and AtLoc they shared.
 
 ## Citation
 
