@@ -17,25 +17,40 @@ We support the Oxford Radar RobotCar and vReLoc datasets right now.
 ### Oxford
 
 - train -- 2 GPUS
-
-$ python train.py --gpu_id 0 --batch_size 80 --val_batch_size 80 --decay_step 500 --log_dir log-oxford/ --dataset Oxford --num_loc 10 --num_ang 10 --skip 2
+```
+python train.py --gpu_id 0 --batch_size 80 --val_batch_size 80 --decay_step 500 --log_dir log-oxford/ --dataset Oxford --num_loc 10 --num_ang 10 --skip 2
+```
 
 - test  -- 1 GPU
-
-$ python eval.py --gpu_id 0 --val_batch_size 40 --log_dir log-oxford/ --dataset Oxford --num_loc 10 --num_ang 10 --skip 2 --resume_model checkpoint_epochxx.tar
-
+```
+python eval.py --gpu_id 0 --val_batch_size 40 --log_dir log-oxford/ --dataset Oxford --num_loc 10 --num_ang 10 --skip 2 --resume_model checkpoint_epochxx.tar
+```
 
 ### vReLoc
 
 - train  -- 1 GPU
-
-$ python train.py --gpu_id 0 --batch_size 40 --val_batch_size 40 --decay_step 25 --log_dir log-vreloc/ --dataset vReLoc --num_loc 2 --num_ang 10 --skip 0
- 
+```
+python train.py --gpu_id 0 --batch_size 40 --val_batch_size 40 --decay_step 25 --log_dir log-vreloc/ --dataset vReLoc --num_loc 2 --num_ang 10 --skip 0
+ ```
 - test  -- 1 GPU
-
-$ python eval.py --gpu_id 0 --val_batch_size 40 --log_dir log-vreloc/ --dataset vReLoc --num_loc 2 --num_ang 10 --skip 0 --resume_model checkpoint_epochxx.tar
-
+```
+python eval.py --gpu_id 0 --val_batch_size 40 --log_dir log-vreloc/ --dataset vReLoc --num_loc 2 --num_ang 10 --skip 0 --resume_model checkpoint_epochxx.tar
+```
 
 ## Acknowledgement
 
-This code is heavily borrowed from PointNet++ and AtLoc. We appreciate the code they shared.
+ We appreciate the code of PointNet++, SOE-Net, MinkLoc3D, and AtLoc they shared.
+
+## Citation
+
+```
+@ARTICLE{9928031,
+  author={Yu, Shangshu and Wang, Cheng and Lin, Yitai and Wen, Chenglu and Cheng, Ming and Hu, Guosheng},
+  journal={IEEE Transactions on Intelligent Transportation Systems}, 
+  title={STCLoc: Deep LiDAR Localization With Spatio-Temporal Constraints}, 
+  year={2023},
+  volume={24},
+  number={1},
+  pages={489-500},
+  doi={10.1109/TITS.2022.3213311}}
+```
